@@ -34,7 +34,7 @@ const App = () => {
       if (!formData.address) currentErrors.address = 'Address is required';
       if (!formData.city) currentErrors.city = 'City is required';
       if (!formData.state) currentErrors.state = 'State is required';
-      if (!formData.zip || !/^\d{5}$/.test(formData.zip)) currentErrors.zip = 'Valid zip code is required';
+      if (!formData.zip || !/^\d{6}$/.test(formData.zip)) currentErrors.zip = 'Valid zip code is required';
     }
     setErrors(currentErrors);
     return Object.keys(currentErrors).length === 0;
