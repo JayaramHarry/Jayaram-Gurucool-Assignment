@@ -1,16 +1,3 @@
-// import React from 'react';
-
-// export const Confirmation = ({ formData }) => {
-//   return (
-//     <div>
-//       <h3>Confirmation</h3>
-//       <p><strong>Name:</strong> {formData.name}</p>
-//       <p><strong>Email:</strong> {formData.email}</p>
-//       <p><strong>Address:</strong> {formData.address}</p>
-//       <p><strong>City:</strong> {formData.city}</p>
-//     </div>
-//   );
-// };
 
 import React from 'react';
 import { List, ListItem, ListItemText, Typography } from '@mui/material';
