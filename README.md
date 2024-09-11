@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Multi-Step Form Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a multi-step form built using **React** and **Material-UI**. The form allows users to enter personal and address information in separate steps, review the information on a confirmation page, and submit the form. The form uses tabbed navigation, client-side validation, and local storage to persist form data. It is fully responsive and works well on mobile, tablet, and desktop screens.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Multi-step Form:** The form is divided into 3 steps: Personal Information, Address Information, and Confirmation.
+- **Tabbed Navigation:** Users can navigate between steps using tabs.
+- **Form Validation:** Each step validates its fields before allowing the user to proceed to the next step.
+- **Error Handling:** Fields with invalid or missing data are highlighted, and appropriate error messages are displayed.
+- **Local Storage:** The form data is saved in `localStorage`, so users can resume their progress if they refresh the page.
+- **Responsive Design:** The form is designed to be mobile-first and adjusts seamlessly across devices.
+- **Simulated Network Request:** The form submission is simulated using `setTimeout` to mimic an API call.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: JavaScript library for building user interfaces.
+- **Material-UI**: A React component library that provides pre-built, responsive UI components.
+- **localStorage**: To persist form data across page refreshes.
+- **CSS (with Material-UI)**: For styling the components and ensuring responsiveness.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To set up the project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the Repository:**
+   git clone https://github.com/your-username/multi-step-form.git
+   cd multi-step-form
+   
 
-### `npm run build`
+2. **Install Dependencies:**
+   Make sure you have Node.js installed. Then, run the following command to install all the necessary dependencies:
+   npm install
+   
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Run the Development Server:**
+   Once the dependencies are installed, you can run the app locally using:
+   npm start
+   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   The app will be available at `http://localhost:3000/`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the Project
 
-### `npm run eject`
+1. **Step 1 (Personal Information):**
+   - Enter your name, email, and phone number.
+   - Fields are validated before moving to the next step (e.g., email must be a valid format).
+   
+2. **Step 2 (Address Information):**
+   - Enter your address, city, state, and zip code.
+   - The zip code must be exactly 5 digits.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Step 3 (Confirmation):**
+   - Review all the information you have entered.
+   - If everything looks correct, click the "Submit" button.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Submit:**
+   - Upon submitting, a simulated network request (using `setTimeout`) will be triggered. A success message will be displayed after a short delay.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Assumptions & Decisions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Validation:**
+   - I assumed that email validation should follow standard format checks (e.g., containing "@" and a valid domain).
+   - Zip codes are assumed to be 5-digit US zip codes. Adjust this logic if you need support for other countries.
+   - Phone numbers are not validated for format beyond ensuring they are present.
 
-## Learn More
+2. **UI/UX Decisions:**
+   - The form uses tabbed navigation for a cleaner and more organized user experience.
+   - Material-UI components were chosen for their out-of-the-box responsiveness and clean design.
+   - Error messages and invalid inputs are visually highlighted to improve user interaction.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Local Storage:**
+   - The form data is saved in `localStorage` to persist the entered data. If a user refreshes the page, the form fields will be pre-filled with the saved data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Responsiveness:**
+   - I ensured the form design is mobile-first. Media queries and Material-UI's responsive grid system were used to adjust the layout across different screen sizes.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. **Simulated API Call:**
+   - For form submission, a simulated API call is made using `setTimeout`. In a real-world application, this would be replaced with a real API call using `fetch` or `axios`.

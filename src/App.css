@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  animation: fadeIn 0.5s ease;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #798391;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container styling */
+div {
+  box-sizing: border-box;
+}
+
+.form-container {
+  background-color: white;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+}
+
+button {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+  color: #fff;
+}
+
+button:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+/* Spacing and layout for form fields */
+.MuiTextField-root {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+/* Button container styles */
+button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .form-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  button-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
