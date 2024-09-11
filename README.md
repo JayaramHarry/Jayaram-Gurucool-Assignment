@@ -24,7 +24,7 @@ This project is a multi-step form built using **React** and **Material-UI**. The
 To set up the project locally, follow these steps:
 
 1. **Clone the Repository:**
-   git clone https://github.com/your-username/multi-step-form.git
+   https://github.com/JayaramHarry/Jayaram-Gurucool-Assignment.git
    cd multi-step-form
    
 
